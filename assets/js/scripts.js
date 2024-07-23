@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
     this.style.display = "none";
     tl.reverse();
   });
-  
-    new Swiper(".swiper-highlights", {
+
+  new Swiper(".swiper-highlights", {
     loop: true,
     slidesPerView: 1,
     breakpoints: {
@@ -54,5 +54,23 @@ document.addEventListener("DOMContentLoaded", function () {
     pagination: {
       el: ".swiper-pagination",
     },
+  });
+
+  document.querySelectorAll(".swiper-blog").forEach(function (el) {
+    new Swiper(el, {
+      loop: true,
+      slidesPerView: 1,
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+        },
+        1200: {
+          slidesPerView: 3,
+        },
+      },
+      pagination: {
+        el: el.querySelector(".swiper-pagination"),
+      },
+    });
   });
 });
